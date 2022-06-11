@@ -1,0 +1,28 @@
+
+ion-content{
+    --background: linear-gradient(to right, #004C99, #0080FF);
+
+    ion-col{
+        text-align: center;
+        ion-icon{
+            zoom: 2.8;
+            padding: 5px;
+            color: black;
+            &:first-child{
+                zoom: 3.8;
+                padding: 5px;
+            }
+        }
+        h2,h1{
+            margin-top: 0px;
+        }
+        h2{
+            color: black;
+        }
+        ion-card{
+            text-align: center;
+        }
+
+    }
+}
+

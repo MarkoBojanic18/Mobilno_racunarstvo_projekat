@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Reservations preview</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item *ngFor="let reservation of reservations">
+    <ion-card>
+      <ion-card-header>
+        <ion-row class="ion-align-items-left">
+          <ion-col size="4">
+            <ion-img [src]="reservation.carImage"></ion-img>
+          </ion-col>
+          <ion-col size="6" class="ion-text-center">
+            <ion-card-title>{{reservation.takeoverDate}}</ion-card-title>
+          </ion-col>
+          <ion-col size="2" class="ion-text-right">
+            <ion-icon name="trash" style="zoom: 2.0;" (click)=" deleteReservation(reservation.id)"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-card-header>
+    </ion-card>
+  </ion-item>
+
+</ion-content>

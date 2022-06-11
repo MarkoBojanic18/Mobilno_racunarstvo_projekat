@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>Admin dashboard</ion-title>
+    <ion-button color="light" fill="clear" slot="end" (click)="logOut()">
+      <ion-icon name="log-out" slot="end" color="dark" size="large"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-icon name="person"></ion-icon>
+        <ion-text>
+          <h1>Welcome
+            <br>{{firstName}} {{lastName}}
+          </h1>
+        </ion-text>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card color="primary" (click)="openUsersModal()">
+          <ion-icon name="people"></ion-icon>
+          <ion-text>
+            <h2>Users</h2>
+          </ion-text>
+        </ion-card>
+      </ion-col>
+
+
+      <ion-col size="6">
+        <ion-card color="danger" (click)="openSettingsModal()">
+          <ion-icon name="settings"></ion-icon>
+          <ion-text>
+            <h2>Settings</h2>
+          </ion-text>
+        </ion-card>
+      </ion-col>
+
+
+      <ion-col size="6">
+        <ion-card color="secondary" (click)="openAddNewAdminModal()">
+          <ion-icon name="person-add"></ion-icon>
+          <ion-text>
+            <h2>Add new admin</h2>
+          </ion-text>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card color="tertiary" (click)="openAddNewCarModal()">
+          <ion-icon name="add-circle"></ion-icon>
+          <ion-text>
+            <h2>Add new car</h2>
+          </ion-text>
+        </ion-card>
+      </ion-col>
+
+
+      <ion-col size="6">
+        <ion-card color="success" (click)="openViewCarsModal()">
+          <ion-icon name="car-sport"></ion-icon>
+          <ion-text>
+            <h2>View cars</h2>
+          </ion-text>
+        </ion-card>
+      </ion-col>
+
+
+      <ion-col size="6">
+        <ion-card color="warning" (click)="openReservationsModal()">
+          <ion-icon name="calendar"></ion-icon>
+          <ion-text>
+            <h2>Reservations</h2>
+          </ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

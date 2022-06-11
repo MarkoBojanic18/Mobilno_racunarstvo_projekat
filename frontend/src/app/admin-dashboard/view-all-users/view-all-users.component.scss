@@ -1,0 +1,102 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+
+
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+ion-content{
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    --background: linear-gradient(to right, #004C99, #0080FF);
+}
+
+.registration-container{
+    background: grey;
+    margin: 20px auto 20px auto;
+    padding: 15px 25px;
+    width: 640px;
+    border-radius: 12px;
+    box-shadow: 10px 14px 90px #F5AC6252;
+   
+
+    ion-list{
+        background-color: grey;
+       
+         text-align: center;
+
+         
+    ion-list-header{
+        background-color: black;
+         border-radius: 15px 15px 0 0;
+    }
+    
+
+    ion-item:last-child{
+        border-radius: 0 0 15px 15px;
+    }
+
+}
+}
+
+
+
+
+
+.registration-container .registration-footer{
+    text-align: center;
+    padding: 20px;
+}
+
+.registration-footer h3{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.registration-footer a{
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.registration-footer a:hover{
+    border-bottom: 2px solid #FC8C1B;
+} 
+
+
+@media screen and (max-width:480px){
+    .registration-container{
+        display: block;
+        padding: 10px;
+        border-radius: 12px;
+        max-width: 400px;
+    }
+    .registration-container .registration-header{
+        padding: 10px 0px;
+    }
+    .registration-body .registration-box{
+        display: block;
+    }
+    .registration-box .input-box{
+        width: 100%;
+        padding: 05px 0px;
+    }
+
+    .registration-box .input-box:focus-within{
+        padding: 12px 0px;
+    }
+    .registration-body .btn-register{
+        width: 100%;
+        margin: auto;
+    }
+
+}

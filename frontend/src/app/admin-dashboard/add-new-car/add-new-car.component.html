@@ -1,0 +1,162 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add new car</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="registration-container">
+    <div class="registration-header">
+      <ion-title>New car form</ion-title>
+      <ion-icon name="car-sport" slot="end" size="large"></ion-icon>
+      <span class="divider"></span>
+    </div>
+    <div class="registration-body">
+      <form>
+        <div class="registration-box">
+          <div class="input-box">
+            <ion-label for="">Mark of the car</ion-label>
+            <ion-select [(ngModel)]="markOfTheCar" name="markOfTheCar" required>
+              <ion-select-option>Opel</ion-select-option>
+              <ion-select-option>Audi</ion-select-option>
+              <ion-select-option>BMW</ion-select-option>
+              <ion-select-option>Škoda</ion-select-option>
+              <ion-select-option>Toyota</ion-select-option>
+              <ion-select-option>Renault</ion-select-option>
+              <ion-select-option>Alfa Romeo</ion-select-option>
+              <ion-select-option>Citroen</ion-select-option>
+              <ion-select-option>Nissan</ion-select-option>
+              <ion-select-option>Mercedes</ion-select-option>
+              <ion-select-option>Subaru</ion-select-option>
+              <ion-select-option>Volkswagen</ion-select-option>
+              <ion-select-option>Mitshubishi</ion-select-option>
+            </ion-select>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Model of the car</ion-label>
+            <ion-input type="text" [(ngModel)]="modelOfTheCar" class="input-field" placeholder="Enter model of the car"
+              name="modelOfTheCar" required>
+            </ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car made</ion-label>
+            <ion-input type="text" [(ngModel)]="carMade" class="input-field" placeholder="Enter the year of the car"
+              name="carMade" required>
+            </ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car crossed</ion-label>
+            <ion-input type="text" [(ngModel)]="carCrossed" class="input-field"
+              placeholder="Enter the mileage of the car" name="carCrossed" required></ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car fuel type</ion-label>
+            <ion-select [(ngModel)]="carFuelType" name="carFuelType" required>
+              <ion-select-option>Dizel</ion-select-option>
+              <ion-select-option>Auto gas</ion-select-option>
+              <ion-select-option>Metan</ion-select-option>
+              <ion-select-option>Benzin</ion-select-option>
+            </ion-select>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car cubic capacity</ion-label>
+            <ion-input type="text" [(ngModel)]="carCubicCapacity" class="input-field"
+              placeholder="Enter car cubic capacity" name="carCubicCapacity" required></ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car engine power</ion-label>
+            <ion-input type="text" [(ngModel)]="carEnginePower" class="input-field"
+              placeholder="Enter the car engine power" name="carEnginePower" required></ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car transmission</ion-label>
+            <ion-input type="text" [(ngModel)]="carTransmission" class="input-field"
+              placeholder="Enter the type of car transmission" name="carTransmission" required></ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car emission class</ion-label>
+            <ion-input type="text" [(ngModel)]="carEmissionClass" class="input-field"
+              placeholder="Enter the car emission class" name="carEmissionClass" required></ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car climate</ion-label>
+            <ion-input type="text" [(ngModel)]="carClimate" class="input-field"
+              placeholder="Enter the car climate information" name="carClimate" required></ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car doors</ion-label>
+            <ion-select [(ngModel)]="carDoors" name="carDoors" required>
+              <ion-select-option>1</ion-select-option>
+              <ion-select-option>2</ion-select-option>
+              <ion-select-option>3</ion-select-option>
+              <ion-select-option>4</ion-select-option>
+              <ion-select-option>5</ion-select-option>
+            </ion-select>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car body</ion-label>
+            <ion-select [(ngModel)]="carBody" name="carBody" required>
+              <ion-select-option>Limousine</ion-select-option>
+              <ion-select-option>Hatchback</ion-select-option>
+              <ion-select-option>Caravan</ion-select-option>
+              <ion-select-option>Coupe</ion-select-option>
+              <ion-select-option>Cabriolet</ion-select-option>
+              <ion-select-option>Minivan</ion-select-option>
+              <ion-select-option>SUV</ion-select-option>
+              <ion-select-option>Pickup</ion-select-option>
+            </ion-select>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car seats</ion-label>
+            <ion-input type="text" [(ngModel)]="carSeats" class="input-field"
+              placeholder="Enter how many seats the car has" name="carSeats" required></ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car color</ion-label>
+            <ion-input type="text" [(ngModel)]="carColor" class="input-field" placeholder="Enter the color of the car"
+              name="carColor" required></ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car drive</ion-label>
+            <ion-input type="text" [(ngModel)]="carDrive" class="input-field" placeholder="Enter the car drive type"
+              name="carDrive" required> </ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car price</ion-label>
+            <ion-input type="text" [(ngModel)]="carPrice" class="input-field" placeholder="Enter the car price"
+              name="carPrice" required>
+            </ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car type</ion-label>
+            <ion-input type="text" [(ngModel)]="carType" class="input-field" placeholder="Enter the type of the car"
+              name="carType" required></ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Car image</ion-label>
+            <ion-input type="text" [(ngModel)]="carImage" name="carImage" placeholder="Enter the link of the car image"
+              required>
+            </ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Accessories</ion-label>
+            <ion-textarea type="text" [(ngModel)]="accessories" class="input-field"
+              placeholder="Write Accessories which car has" name="accessories">
+            </ion-textarea>
+          </div>
+        </div>
+
+        <ion-button type="Submit" (click)="addCar()" fill="clear" class="btn-register">Submit form</ion-button>
+      </form>
+    </div>
+    <div class="registration-footer">
+      <h3><a href="#"> Sport<span style="color: red; font-weight: 700; font-size: 18px;">Line</span></a></h3>
+    </div>
+  </div>
+</ion-content>

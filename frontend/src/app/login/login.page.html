@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/mainscreen"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refreshPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="background-pic">
+    <div class="background-filter">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            Welcome!
+          </ion-card-title>
+          <ion-card-subtitle>
+            Time to find your car, Let's <a routerLink="/login">Sign in</a>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating" style="color:grey;">Email address</ion-label>
+            <ion-input type="email" [(ngModel)]="email" required email>
+            </ion-input>
+            <ion-icon class="ion-align-self-center" slot="end" name="mail" style="color: rgb(79, 74, 74);"></ion-icon>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label position="floating" style="color:grey;">Password</ion-label>
+            <ion-input type="password" [(ngModel)]="password" required password minlength="5"></ion-input>
+            <ion-icon class="ion-align-self-center" slot="end" name="eye" style="color: rgb(79, 74, 74);"></ion-icon>
+          </ion-item>
+
+
+          <p routerLink="/forgot-password">Forgot Password</p>
+
+
+          <div class="bottom-section">
+
+
+            <ion-button type="submit" (click)="loginUser()">
+              Sign in
+            </ion-button>
+            <span>Don't have an account?<a class="signUp" href="http://localhost:8100/sign-up">Sign up</a></span>
+          </div>
+
+
+          <p id="media">Login using Social Media</p>
+          <div class="socialMedia">
+            <ion-icon name="logo-facebook" (click)="facebookLogin()"></ion-icon>
+            <ion-icon name="logo-twitter" (click)="twitterLogin()"></ion-icon>
+            <ion-icon name="logo-google" (click)="gmailLogin()"></ion-icon>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>View all users</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <div class="registration-container">
+    <ion-list>
+      <ion-list-header>
+        <h5 text-center>Users</h5>
+      </ion-list-header>
+
+      <ion-item lines="inset" *ngFor="let user of usersAdmin">
+        <ion-label>
+          <h5>{{user.firstName}} {{user.lastName}} <span *ngIf="user.admin == 'true'"
+              style="color: #2dd36f;">ADMIN</span></h5>
+        </ion-label>
+
+        <div class="item-note">
+          <ion-icon name="create" style="zoom: 2.0;" (click)="onCancel()" [routerLink]="['/update-user/',user.id]">
+          </ion-icon>
+          <ion-icon name="trash" style="zoom: 2.0;" (click)=" deleteUser(user.id)"></ion-icon>
+        </div>
+
+      </ion-item>
+
+
+
+      <ion-item lines="inset" *ngFor="let user of usersUsers">
+        <ion-label>
+          <h5>{{user.firstName}} {{user.lastName}}
+          </h5>
+        </ion-label>
+
+        <div class="item-note">
+          <ion-icon name="create" style="zoom: 2.0;" (click)="onCancel()" [routerLink]="['/update-user/',user.id]">
+          </ion-icon>
+          <ion-icon name="trash" style="zoom: 2.0;" (click)=" deleteUser(user.id)"></ion-icon>
+        </div>
+
+      </ion-item>
+
+    </ion-list>
+    <div class="registration-footer">
+      <h3><a href="#"> Sport<span style="color: red; font-weight: 700; font-size: 18px;">Line</span></a></h3>
+    </div>
+  </div>
+</ion-content>

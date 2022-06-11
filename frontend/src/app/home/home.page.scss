@@ -1,0 +1,126 @@
+
+ion-avatar{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.avatar {
+  --background: #316dd0;
+  h2 {
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+  }
+}
+
+.search{
+  --background: #316dd0;
+  h2 {
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+  }
+}
+
+.search:last-of-type {
+  div {
+    padding-bottom: 20px;
+  }
+  border-radius: 0 0 20% 20%;
+}
+
+ion-searchbar {
+  --box-shadow: none;
+  --border-radius: 10px;
+  opacity: .96;
+  padding: 0;
+  margin: 12px 0;
+  align-items: center;
+}
+
+ion-col {
+  padding: 0;
+}
+.brends {
+    display: flex;
+  
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    width: 100%;
+    margin-left: 12px;
+    margin-bottom: 40px;
+}
+
+.brends img {
+    max-width: 50px;
+    max-height: 60px;
+    transform-origin: center;
+    margin-right: 10px;
+    transform: perspective(800px) rotateY(20deg);
+    transition: 0.5s;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0004);
+}
+
+.brends:hover img {
+    opacity: 0.1;
+}
+
+.brends img:hover {
+    transform: perspective(100px) rotateY(20deg);
+    opacity: 1;
+}
+
+// ::ng-deep .searchbar-search-icon {
+//   color: #316dd0 !important;
+// }
+
+ion-content {
+  --background: white;
+}
+
+.cars{
+  --background: white !important;
+  --border-color: white !important;
+
+   
+ion-card {
+  padding: 6px;
+  box-shadow: none;
+  box-shadow: 0px 3px 45px 0px rgba(0, 0, 0, 0.16);
+  border-radius: 30px;
+  height: 400px;
+  width: 100%;
+
+  ion-img {
+    margin: 10px auto 10px auto;
+  }
+
+  ion-img src{
+    height: 500px;
+    width: 500px;
+  }
+}
+}
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

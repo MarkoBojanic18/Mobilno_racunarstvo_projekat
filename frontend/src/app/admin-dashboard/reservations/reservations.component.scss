@@ -1,0 +1,36 @@
+
+ion-content{
+position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    --background: linear-gradient(to right, #004C99, #0080FF);
+}
+
+ion-item:first-child{
+    margin:30px auto 0px auto;
+    border-radius: 10px 10px 0 0;
+}
+
+ion-item:last-child{
+    margin:0px auto 30px auto;
+    border-radius: 0px 0px 10px 10px;
+}
+
+ion-item{
+    width: 95%;
+    margin:0px auto 0px auto;
+    
+    
+ion-card {
+  width: 100%;
+  box-shadow: 0px 1px 6px #F5AC6280;
+  ion-img {
+    width: 100px;
+    margin: 0 auto;
+  }
+
+  
+}
+}
+

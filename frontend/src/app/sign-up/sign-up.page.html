@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/mainscreen"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="background-pic">
+    <div class="background-filter">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            Sign Up!
+          </ion-card-title>
+          <ion-card-subtitle>
+            Create Your<strong> account</strong> by filling <br>up the form
+          </ion-card-subtitle>
+        </ion-card-header>
+
+
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating" style="color:grey;">Name</ion-label>
+            <ion-input type="text" [(ngModel)]="firstName" required firstname>
+            </ion-input>
+            <ion-icon class="ion-align-self-center" slot="end" name="person" style="color: rgb(79, 74, 74);">
+            </ion-icon>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label position="floating" style="color:grey;">Surname</ion-label>
+            <ion-input type="text" name="surname" #surname="ngModel" [(ngModel)]="lastName" required surname>
+            </ion-input>
+            <ion-icon class="ion-align-self-center" slot="end" name="person" style="color: rgb(79, 74, 74);">
+            </ion-icon>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label position="floating" style="color:grey;">Phone number</ion-label>
+            <ion-input type="text" [(ngModel)]="phoneNumber" required phoneNumber></ion-input>
+            <ion-icon class="ion-align-self-center" slot="end" name="call" style="color: rgb(79, 74, 74);"></ion-icon>
+          </ion-item>
+
+
+
+          <ion-item>
+            <ion-label position="floating" style="color:grey;">Email Address</ion-label>
+            <ion-input type="email" [(ngModel)]="email" required email>
+            </ion-input>
+            <ion-icon class="ion-align-self-center" slot="end" name="mail" style="color: rgb(79, 74, 74);"></ion-icon>
+          </ion-item>
+
+
+
+          <ion-item>
+            <ion-label position="floating" style="color:grey;">Password</ion-label>
+            <ion-input type="password" [(ngModel)]="password" required password minlength="5">
+            </ion-input>
+            <ion-icon class="ion-align-self-center" slot="end" name="eye-off" style="color: rgb(79, 74, 74);">
+            </ion-icon>
+          </ion-item>
+
+
+
+          <div class="bottom-section">
+            <ion-button (click)="addUser()" type="submit">
+              Sign Up
+            </ion-button>
+
+
+            <span>Already have an account?<a class="signUp" href="http://localhost:8100/login">Sign in</a></span>
+          </div>
+        </ion-card-content>
+
+      </ion-card>
+
+    </div>
+  </div>
+
+</ion-content>

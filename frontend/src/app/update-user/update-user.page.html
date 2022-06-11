@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Update user</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin-dashboard"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="registration-container">
+    <div class="registration-header">
+      <ion-title>Update user form</ion-title>
+      <ion-icon name="create" slot="end" size="large" zoom="10"></ion-icon>
+      <span class="divider"></span>
+    </div>
+    <div class="registration-body">
+      <form>
+        <div class="registration-box">
+          <div class="input-box">
+            <ion-label for="">Admin first name</ion-label>
+            <ion-input type="text" class="input-field" [(ngModel)]="firstName"
+              placeholder="Enter first name of the admin" name="firsName" required>
+            </ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Admin last name</ion-label>
+            <ion-input type="text" class="input-field" [(ngModel)]="lastName" placeholder="Enter last name of the admin"
+              name="lastName" required>
+            </ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Phone number</ion-label>
+            <ion-input type="text" class="input-field" [(ngModel)]="phoneNumber"
+              placeholder="Enter phone number of the admin" name="phoneNumber" required>
+            </ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Email</ion-label>
+            <ion-input type="text" class="input-field" [(ngModel)]="email" placeholder="Enter email of the admin"
+              name="email" required></ion-input>
+          </div>
+          <div class="input-box">
+            <ion-label for="">Password</ion-label>
+            <ion-input type="password" class="input-field" [(ngModel)]="password"
+              placeholder="Enter password of the admin" name="password" required>
+            </ion-input>
+          </div>
+        </div>
+
+        <ion-button type="Submit" (click)="updateUser()" fill="clear" class="btn-register">Submit form</ion-button>
+      </form>
+    </div>
+    <div class="registration-footer">
+      <h3><a href="#"> Sport<span style="color: red; font-weight: 700; font-size: 18px;">Line</span></a></h3>
+    </div>
+  </div>
+</ion-content>
