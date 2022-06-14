@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import { AuthService } from '../auth/auth.service';
 import { NavparamService } from '../navparam.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class LoginPage implements OnInit {
   password:any;
   users: any = [];
 
-  constructor(public _apiService: ApiService,private router:Router, private navService: NavparamService) {
+  constructor(public _apiService: ApiService,private router:Router, private navService: NavparamService, private authService:AuthService) {
     
    }
 
@@ -26,11 +27,13 @@ export class LoginPage implements OnInit {
       if(user.email == this.email && user.password == this.password && user.admin == "false"){
             alert('You are successfully login!');
             this.navService.setLoginUser(user.id);
+            this.authService.login();
             this.router.navigateByUrl('/home');
             return;
       }
       else if(user.email == this.email && user.password == this.password && user.admin == "true"){
             alert('You are successfully login!');
+            this.authService.login();
             this.navService.setLoginUser(user.id);
             this.router.navigateByUrl('/admin-dashboard');
             return;
@@ -61,4 +64,5 @@ export class LoginPage implements OnInit {
   twitterLogin(){}
   gmailLogin(){}
 
+ 
 }

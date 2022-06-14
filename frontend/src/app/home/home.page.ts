@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ApiService } from '../api.service';
+import { AuthService } from '../auth/auth.service';
 import { NavparamService } from '../navparam.service';
 import { CarDetailsComponent } from './car-details/car-details.component';
 
@@ -10,18 +11,18 @@ import { CarDetailsComponent } from './car-details/car-details.component';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage /*implements OnInit, OnDestroy*/ {
   userId: any;
   firstName: any;
   lastName: any;
-  phoneNumber:any;
+  phoneNumber: any;
   email: any;
   password: any;
   admin: any;
   users: any = [];
 
 
-  id:any;
+  id: any;
   markOfTheCar: any;
   modelOfTheCar: any;
   carMade: any;
@@ -41,19 +42,20 @@ export class HomePage {
   carType: any;
   carImage: any;
   accessories: any;
-  carLikes:any;
-  carDislikes:any;
-  carReserved:any;
-  carOwnerId:any;
+  carLikes: any;
+  carDislikes: any;
+  carReserved: any;
+  carOwnerId: any;
   cars: any = [];
-  
-  constructor(public _apiService: ApiService,private route: ActivatedRoute, private router:Router,private modalController: ModalController,private navService: NavparamService) {
+
+  constructor(public _apiService: ApiService, private route: ActivatedRoute, private router: Router, private modalController: ModalController, private navService: NavparamService) {
     this.userId = navService.getLoginUser();
-     this.getUsers();
-     this.getCars();
+    this.getUsers();
+    this.getCars();
+    console.log('constructor');
   }
 
-  addStudent(){
+  addStudent() {
 
 
     // this._apiService.addStudent(data).subscribe((res:any)=>{
@@ -64,54 +66,90 @@ export class HomePage {
 
   }
 
-  getUsers(){
-     this._apiService.getUsers().subscribe((res:any)=>{
-       this.users = res;
-       this.users.forEach(user => {
-         if(user.id == this.userId){
-           this.firstName = user.firstName;
-           this.lastName = user.lastName;
-           this.phoneNumber = user.phoneNumber;
-           this.email = user.email;
-           this.password = user.password;
-           this.admin = user.admin;
-         }
-       });
-    console.log("SUCCESS ===",res);
-    }, (error:any) =>{
-      console.log("ERROR ===",error);
+  getUsers() {
+    this._apiService.getUsers().subscribe((res: any) => {
+      this.users = res;
+      this.users.forEach(user => {
+        if (user.id == this.userId) {
+          this.firstName = user.firstName;
+          this.lastName = user.lastName;
+          this.phoneNumber = user.phoneNumber;
+          this.email = user.email;
+          this.password = user.password;
+          this.admin = user.admin;
+        }
+      });
+      console.log("SUCCESS ===", res);
+    }, (error: any) => {
+      console.log("ERROR ===", error);
     })
   }
 
-  logOut(){
+  logOut() {
     this.router.navigateByUrl('/login');
   }
 
-  getCars(){
-     this._apiService.getCars().subscribe((res:any)=>{
-       console.log("SUCCESS ===",res);
-       this.cars = res;
-    }, (error:any) =>{
-      console.log("ERROR ===",error);
+  getCars() {
+    this._apiService.getCars().subscribe((res: any) => {
+      console.log("SUCCESS ===", res);
+      this.cars = res;
+    }, (error: any) => {
+      console.log("ERROR ===", error);
     })
   }
 
-  openModal(id){
-      this.modalController.create({
+  openModal(id) {
+    this.modalController.create({
       component: CarDetailsComponent,
-      componentProps:{
+      componentProps: {
         carId: id
       }
-    }).then((modal)=>{
+    }).then((modal) => {
       modal.present();
     });
   }
 
-  refreshPage(e){
+  refreshPage(e) {
     this.getCars();
-    setTimeout(() =>{
+    setTimeout(() => {
       e.target.complete();
-    },2000);
+    }, 2000);
   }
+
+
+
+
+  /*
+  ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
+  }
+  
+    ngOnInit() {
+      console.log('ngOnInit');
+    }
+  
+    ionViewWillEnter(){
+      console.log('ionViewWillEnter');
+    }
+  
+    ionViewDidEnter(){
+      console.log('ionViewDidEnter');
+    }
+  
+    ionViewWillLeave(){
+      console.log('ionViewWillLeave');
+    }
+  
+  
+    ionViewDidLeave(){
+      console.log('ionViewDidLeave');
+      
+    }
+  
+    ngOnDestry(){
+      console.log('ngOnDestroy')
+    }
+  
+  */
 
 }
