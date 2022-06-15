@@ -24,51 +24,81 @@
         <ion-card-content>
           <ion-item>
             <ion-label position="floating" style="color:grey;">Name</ion-label>
-            <ion-input type="text" [(ngModel)]="firstName" required firstname>
+            <ion-input type="text" #namee="ngModel" [(ngModel)]="firstName" required firstname>
             </ion-input>
             <ion-icon class="ion-align-self-center" slot="end" name="person" style="color: rgb(79, 74, 74);">
             </ion-icon>
           </ion-item>
+
+          <div *ngIf="namee.invalid && namee.touched">
+            <ion-text color="danger text-center">
+              <h4 style="padding-left: 20px; margin-top:10px;">Please write your name !</h4>
+            </ion-text>
+          </div>
 
 
           <ion-item>
             <ion-label position="floating" style="color:grey;">Surname</ion-label>
-            <ion-input type="text" name="surname" #surname="ngModel" [(ngModel)]="lastName" required surname>
+            <ion-input type="text" name="surname" #surnamee="ngModel" [(ngModel)]="lastName" required surname>
             </ion-input>
             <ion-icon class="ion-align-self-center" slot="end" name="person" style="color: rgb(79, 74, 74);">
             </ion-icon>
           </ion-item>
 
+          <div *ngIf="surnamee.invalid && surnamee.touched">
+            <ion-text color="danger text-center">
+              <h4 style="padding-left: 20px; margin-top:10px;">Please write your surname !</h4>
+            </ion-text>
+          </div>
+
 
           <ion-item>
             <ion-label position="floating" style="color:grey;">Phone number</ion-label>
-            <ion-input type="text" [(ngModel)]="phoneNumber" required phoneNumber></ion-input>
+            <ion-input type="text" #phone="ngModel" [(ngModel)]="phoneNumber" required phoneNumber></ion-input>
             <ion-icon class="ion-align-self-center" slot="end" name="call" style="color: rgb(79, 74, 74);"></ion-icon>
           </ion-item>
+
+          <div *ngIf="phone.invalid && phone.touched">
+            <ion-text color="danger text-center">
+              <h4 style="padding-left: 20px; margin-top:10px;">Please write your phone number !</h4>
+            </ion-text>
+          </div>
 
 
 
           <ion-item>
             <ion-label position="floating" style="color:grey;">Email Address</ion-label>
-            <ion-input type="email" [(ngModel)]="email" required email>
+            <ion-input type="email" #emaill="ngModel" [(ngModel)]="email" required email>
             </ion-input>
             <ion-icon class="ion-align-self-center" slot="end" name="mail" style="color: rgb(79, 74, 74);"></ion-icon>
           </ion-item>
 
-
+          <div *ngIf="emaill.invalid && emaill.touched">
+            <ion-text color="danger text-center">
+              <h4 style="padding-left: 20px; margin-top:10px;">Please write your email address !</h4>
+            </ion-text>
+          </div>
 
           <ion-item>
             <ion-label position="floating" style="color:grey;">Password</ion-label>
-            <ion-input type="password" [(ngModel)]="password" required password minlength="5">
+            <ion-input type="password" #passwordd="ngModel" [(ngModel)]="password" required password minlength="5">
             </ion-input>
             <ion-icon class="ion-align-self-center" slot="end" name="eye-off" style="color: rgb(79, 74, 74);">
             </ion-icon>
           </ion-item>
 
+          <div *ngIf="passwordd.invalid && passwordd.touched">
+            <ion-text color="danger text-center">
+              <h4 style="padding-left: 20px; margin-top:10px;">Please write your password !</h4>
+            </ion-text>
+          </div>
+
 
 
           <div class="bottom-section">
-            <ion-button (click)="addUser()" type="submit">
+            <ion-button (click)="addUser()"
+              [disabled]="emaill.invalid || passwordd.invalid || phone.invalid || namee.invalid || surnamee.invalid"
+              type="submit">
               Sign Up
             </ion-button>
 
