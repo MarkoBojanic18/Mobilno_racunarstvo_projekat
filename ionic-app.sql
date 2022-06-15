@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2022 at 11:56 AM
+-- Generation Time: Jun 15, 2022 at 08:36 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -108,7 +108,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `firstName`, `lastName`, `phoneNumber`, `email`, `password`, `admin`) VALUES
 (13, 'Vlada', 'Bojanic', '23424344', 'vladabojanic@gmail.com', '123456', 'true'),
-(21, 'Marko', 'Bojanic', '3424343', 'markobojanic@gmail.com', '123456', 'false'),
+(21, 'Marko', 'Bojanic', '3424343', 'markobojanic@gmail.com', '1234567', 'false'),
 (27, 'Dragan', 'Bojanic', '3423434', 'draganbojanic@gmail.com', '123456', 'true'),
 (29, 'Milica', 'Bicanin', '32432423', 'milicabicanin@gmail.com', '1234567', 'false');
 
@@ -154,7 +154,7 @@ ALTER TABLE `reservations`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
